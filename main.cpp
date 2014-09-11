@@ -8,7 +8,7 @@
 
 
 /*****************************************************************
- *                        MAHE MAIN                              *
+ *                         MAIN LOOP                              *
  *****************************************************************/
 
 #include "lispHeader.h"
@@ -28,17 +28,17 @@ int main()
     {
         readInput();
         
-        if (inputBuf.substr(pos,4) == "quit")  // matches(pos, 4, "quit"))
+        if (inputBuf.substr(pos,4) == "quit")  
             quittingtime = 1;
         else if( (inputBuf[pos] == '(') &&
-                inputBuf.substr(skipblanks(pos+1),6) == "define") // matches(skipblanks(pos+1), 6, "define")  )
+                inputBuf.substr(skipblanks(pos+1),6) == "define") 
         {
 		    prName(parseDef());
 		    cout <<endl;
         }
         else {
 			currentExp = parseExp(); // current expresssion is the global pointer to the parse tree.
-			prValue(eval(currentExp, emptyEnv() )); //prValue(eval(currentExp, emptyEnv() ));  <-- ORIG
+			prValue(eval(currentExp, emptyEnv() )); 
 			cout <<endl<<endl;
         }
         inputBuf.clear(); // flush input buffer
@@ -47,27 +47,3 @@ int main()
     
     return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ******************** END MAHE CODE **************************//
-// *                                                           *//
-// *************************************************************//
-
-// Start my reader code -- ignore for now i will integrate at the next step.
-
-
-
-
-
