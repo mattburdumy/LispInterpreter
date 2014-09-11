@@ -138,7 +138,7 @@ EXP mkVAREXP ( NAME nm) // *********** check me
     e->varble = nm;
     
     return e; 
-    //you write the code
+   
     
 }/* mkVAREXP */
 
@@ -154,7 +154,7 @@ EXP mkAPEXP (NAME op, EXPLIST el) // *********** CHECK ME
     e->optr = op;
     e->args = el; 
     return e;
-    //you write the code
+   
     
 }/* mkAPEXP */
 
@@ -168,7 +168,7 @@ EXPLIST mkExplist (EXP e, EXPLIST el)
     list->head = e;
     list->tail = el;
     return list;
-    //you write the code
+    
     
 }/* mkExplist */
 
@@ -371,7 +371,7 @@ NUMBER parseVal()
     
     return final;
     
-    // you do this
+
 }// parseVal
 
 EXPLIST parseEL(); // forward declaration
@@ -400,8 +400,7 @@ EXP parseExp()
     //create varexp
     return mkVAREXP(parseName());
     
-    
-    //you write the code;
+
     //this and parseEL() are mutually recursive
     
 }// parseExp
@@ -420,7 +419,7 @@ EXPLIST parseEL()
     EXPLIST temp2 = parseEL();
     return mkExplist(temp, temp2);
     
-    //you write the code;
+    
     //this and parseEXP() are mutually recursive
     
 }// parseEL
